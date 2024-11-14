@@ -1,5 +1,6 @@
 package jpabasic.portandadapterpractice.adapter.out.persistance;
 
+import jpabasic.portandadapterpractice.domain.model.CampSite;
 import jpabasic.portandadapterpractice.port.out.LoadCampSitePort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

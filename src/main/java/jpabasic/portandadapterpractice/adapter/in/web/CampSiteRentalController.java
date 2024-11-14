@@ -1,5 +1,7 @@
 package jpabasic.portandadapterpractice.adapter.in.web;
 
+import jpabasic.portandadapterpractice.adapter.in.web.response.CampSiteResponse;
+import jpabasic.portandadapterpractice.domain.model.CampSite;
 import jpabasic.portandadapterpractice.port.in.GetCampSiteUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,8 +21,8 @@ public class CampSiteRentalController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Set<CampSiteResponse>> getAllCampSites() {
+    public ResponseEntity<CampSiteResponse> getAllCampSites() {
         Set<CampSite> campSites = getCampSiteUseCase.getAllCampSites();
-        return null;
+        return ResponseEntity.ok(CampSiteResponse.from(campSites));
     }
 }

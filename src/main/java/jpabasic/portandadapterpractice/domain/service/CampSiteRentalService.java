@@ -1,5 +1,6 @@
 package jpabasic.portandadapterpractice.domain.service;
 
+import jpabasic.portandadapterpractice.domain.model.CampSite;
 import jpabasic.portandadapterpractice.port.in.GetCampSiteUseCase;
 import jpabasic.portandadapterpractice.port.out.LoadCampSitePort;
 import lombok.RequiredArgsConstructor;
