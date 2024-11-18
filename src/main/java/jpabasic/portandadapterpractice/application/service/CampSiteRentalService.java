@@ -1,7 +1,8 @@
-package jpabasic.portandadapterpractice.domain.service;
+package jpabasic.portandadapterpractice.application.service;
 
-import jpabasic.portandadapterpractice.port.in.GetCampSiteUseCase;
-import jpabasic.portandadapterpractice.port.out.LoadCampSitePort;
+import jpabasic.portandadapterpractice.application.port.in.GetCampSiteUseCase;
+import jpabasic.portandadapterpractice.application.port.out.LoadCampSitePort;
+import jpabasic.portandadapterpractice.domain.CampSite;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

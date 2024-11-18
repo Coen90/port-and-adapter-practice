@@ -1,11 +1,14 @@
 package jpabasic.portandadapterpractice.adapter.out.persistance;
 
-import jpabasic.portandadapterpractice.port.out.LoadCampSitePort;
+import jpabasic.portandadapterpractice.adapter.out.persistance.entity.CampSiteEntity;
+import jpabasic.portandadapterpractice.application.port.out.LoadCampSitePort;
+import jpabasic.portandadapterpractice.domain.CampSite;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
@@ -14,6 +17,9 @@ public class CampSitePersistenceAdapter implements LoadCampSitePort {
 
     @Override
     public Set<CampSite> loadAllCampSites() {
-        return Set.of();
+        List<CampSiteEntity> campSites = campSiteRepository.findAll();
+        return campSites.stream()
+                .map(CampSiteEntity::toDomain)
+                .collect(Collectors.toSet());
     }
 }
